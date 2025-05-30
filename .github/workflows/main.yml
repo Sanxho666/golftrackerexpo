@@ -35,6 +35,9 @@ jobs:
 
       - name: Android Emulator Runner
         uses: ReactiveCircus/android-emulator-runner@v2.34.0
+        with:
+          api-level: 30
+          script: echo "Emulator started"
 
       - name: React Native Android Build APK
         uses: realabbas/Github-Actions-React-Native@v1.1.2
