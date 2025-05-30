@@ -1,33 +1,42 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import MapScreen from './screens/MapScreen';
-import ScorecardScreen from './screens/ScorecardScreen';
-import HistoryScreen from './screens/HistoryScreen';
-import CourseSelectionScreen from './screens/CourseSelectionScreen';
-
-const Stack = createNativeStackNavigator();
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Map">
-        <Stack.Screen name="Map" component={MapScreen} />
-        <Stack.Screen name="Scorecard" component={ScorecardScreen} />
-        <Stack.Screen name="History" component={HistoryScreen} />
-        <Stack.Screen name="CourseSelection" component={CourseSelectionScreen} />
-      </Stack.Navigator>
-      <StatusBar style="auto" />
-    </NavigationContainer>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-native",
+    "lib": [
+      "esnext"
+    ],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@screens/*": [
+        "screens/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@types/*": [
+        "types/*"
+      ]
+    },
+    "skipLibCheck": true
   },
-});
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "extends": "expo/tsconfig.base"
+}
